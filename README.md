@@ -24,9 +24,8 @@ This app allows to do these on a remote PC:
 
 # Screenshots
 
-![rcl-server-533](https://github.com/user-attachments/assets/e21894ac-7c13-4ef4-b523-7e63bb997d08)
-
-![rcl-client](https://github.com/user-attachments/assets/2ce48291-b220-4d41-857c-50eb6858e949)
+![rcl-server](https://github.com/user-attachments/assets/6188e26b-60b9-439b-b35e-a8bb745187c6)
+![rcl-client](https://github.com/user-attachments/assets/80a25f50-1f9b-4683-9871-8eecbe22b101)
 
 
 #
@@ -39,7 +38,7 @@ This app allows to do these on a remote PC:
 > - Run the application
 > - Change the port number and password
 > - Click "Start server" button
-> 
+
 > #### Client:
 > - Download and install the client app ---> [for Windows](https://github.com/Movansha/remote-cmd-line/releases/latest)
 > - Run the application
