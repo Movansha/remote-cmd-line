@@ -54,7 +54,7 @@ string local_temp = get_path_LocalAppData() + "Temp\\output";
 
 static void default_values() {
     config_json = {
-        {"_comment", "If you have changed this file incorrectly, you may delete the file and restart the app."},
+        {"_COMMENT", "If you have changed this file incorrectly, you may delete the file and restart the app."},
         {"ip-adress", "example.movansha.com"},
         {"port-number", 12580},
         {"password", "R7kLqwsN8lYLOGMf"},
