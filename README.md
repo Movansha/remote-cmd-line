@@ -21,11 +21,13 @@ This app allows to do them on a remote PC:
 
 ### [*` >> Download for Windows `*](https://github.com/Movansha/remote-cmd-line/releases/latest)
 
+
 # Screenshots
+
+![rcl-server-533](https://github.com/user-attachments/assets/e21894ac-7c13-4ef4-b523-7e63bb997d08)
 
 ![rcl-client](https://github.com/user-attachments/assets/2ce48291-b220-4d41-857c-50eb6858e949)
 
-![rcl-server](https://github.com/user-attachments/assets/6be041f5-db61-41a9-821f-258a3b49ac26)
 
 #
 > ### Easy to Use (Step by Step)
