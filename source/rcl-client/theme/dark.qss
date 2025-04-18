@@ -1,0 +1,48 @@
+#centralWidget {
+background-color: #1e1e1e;
+}
+
+
+QPushButton {
+background: #2e2e2e; 
+border: 1 solid #393939;
+
+border-radius: 5;
+}
+
+QPushButton::hover {
+background: #506a80;
+border: 1 solid #5f8eb3;
+}
+
+QPushButton::focus {
+border: 1 solid #2569a1;
+}
+
+QPushButton::pressed {
+background: #5991c2;
+border: 1 solid #70b3e6;
+}
+
+
+QTextEdit {
+font: 9pt "Consolas";
+
+border: 1 solid #393939;
+}
+
+QLineEdit {
+border: 1 solid #393939; border-radius: 4;
+}
+
+QLineEdit::focus {
+border: 1 solid #5f8eb3;
+}
+
+QSpinBox {
+border: 1 solid #393939; border-radius: 3;
+}
+
+QSpinBox::focus {
+border: 1 solid #5f8eb3;
+}
