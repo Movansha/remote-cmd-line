@@ -2,7 +2,7 @@
 
 Basic remote control application for Windows
 
-This app allows to do them on a remote PC:
+This app allows to do these on a remote PC:
 
 - ⚙️ Execute system commands
 - 🔊 Play beeps
