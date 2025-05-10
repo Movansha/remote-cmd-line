@@ -1,7 +1,7 @@
 # ----- .gitignore for this project -----
 
 
-# Folders from IDE (Visual Studio)
+# The files and folders from IDE (VS)
 /source/.vs/
 /source/x64/
 /source/*.sln
