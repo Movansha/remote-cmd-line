@@ -1,0 +1,16 @@
+# ----- .gitignore for this project -----
+
+
+# Folders from IDE (Visual Studio)
+/source/.vs/
+/source/x64/
+/source/*.sln
+
+/source/**/x64/
+/source/**/resource.h
+
+/source/**/*.aps
+/source/**/*.rc
+/source/**/*.vcxproj
+/source/**/*.filters
+/source/**/*.user
