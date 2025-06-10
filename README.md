@@ -13,7 +13,7 @@ This app allows to do these on a remote PC:
 > - Language: C++ (17)
 > - Library: nlohmann/json (3.11.3)
 > - Library: chriskohlhoff/asio (1.30.2)
-> - Framework: Qt (6.7.3)
+> - Framework: Qt (6.9.1)
 
 > [!CAUTION]
 > Don't use "remote-hidden-client" as a remote access trojan!
