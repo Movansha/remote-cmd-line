@@ -32,8 +32,8 @@ This app allows to do these on a remote PC:
 #
 > ### Easy to Use (Step by Step)
 > #### Server:
-> - Make sure your ISP does not perform CGNAT
-> - Open a port on your router for port forwarding
+> - Make sure your ISP does not perform CGNAT (for IPv4)
+> - Forward a port on your router (for IPv4) 
 > - You may use Duck DNS to use a domain if you want
 > - Download and install the controller app ---> [for Windows](https://github.com/Movansha/remote-cmd-line/releases/latest)
 > - Run the application
@@ -44,7 +44,8 @@ This app allows to do these on a remote PC:
 > - Download and install the client app ---> [for Windows](https://github.com/Movansha/remote-cmd-line/releases/latest)
 > - Run the application
 > - Click "Connection preferences" button
-> - Enter the server's IP adress, port number and password
+> - Enter the server's IP adress (IPv4 or IPv6), port number and password
+> - You may enter a domain name instead of IP addresses
 > - Click "Connect" button
 
 > [!TIP]
