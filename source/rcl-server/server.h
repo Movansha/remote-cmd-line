@@ -13,6 +13,9 @@ extern asio::io_context c_context;
 extern tcp::socket c_socket;
 extern tcp::acceptor c_acceptor;
 
+extern tcp::endpoint c_ep6;
+extern tcp::endpoint c_ep4;
+
 //----------
 
 string read_from_client(tcp::socket& c_socket);

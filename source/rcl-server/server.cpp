@@ -24,7 +24,11 @@ bool connection = false;
 
 asio::io_context c_context;
 tcp::socket c_socket = tcp::socket(c_context);
-tcp::acceptor c_acceptor = tcp::acceptor(c_context, tcp::endpoint(tcp::v4(), 12580)); //default port number
+tcp::acceptor c_acceptor = tcp::acceptor(c_context);
+
+int default_port = 12580;
+tcp::endpoint c_ep6 = tcp::endpoint(tcp::v6(), default_port);
+tcp::endpoint c_ep4 = tcp::endpoint(tcp::v4(), default_port);
 
 //----------
 
@@ -66,6 +70,8 @@ bool send_to_client(tcp::socket& c_socket, const string& content) {
 //----------
 
 void server::stop() {
+    connection = false;
+
     if (c_acceptor.is_open()) c_acceptor.close();
 
     if (c_socket.is_open()) {
@@ -74,18 +80,46 @@ void server::stop() {
     }
 
     if (!c_context.stopped()) c_context.stop();
-
-    connection = false;
 }
 
 void server::start() {
     thread start_thread( [&]() {
         server::stop();
 
-        asio::error_code ec;
         connection = true;
+        asio::error_code ec;
+        c_acceptor = tcp::acceptor(c_context);
 
-        c_acceptor = tcp::acceptor(c_context, tcp::endpoint(tcp::v4(), config_json["port-number"]));
+        c_ep6 = tcp::endpoint(tcp::v6(), config_json["port-number"]);
+        c_ep4 = tcp::endpoint(tcp::v4(), config_json["port-number"]);
+
+        try {
+            c_acceptor.open(c_ep6.protocol());
+            c_acceptor.set_option(asio::ip::v6_only(false));
+            c_acceptor.bind(c_ep6);
+
+            MainWindow::instance->add_to_output("Dual-stack (IPv4 + IPv6) bind successful!");
+        }
+
+        catch (...) {
+            MainWindow::instance->add_to_output("Dual-stack (IPv4 + IPv6) binding error!");
+
+            c_acceptor.close(ec);
+            c_acceptor.open(c_ep4.protocol(), ec);
+            c_acceptor.bind(c_ep4, ec);
+
+            if (ec) {
+                server::stop();
+                MainWindow::instance->add_to_output("[!] A binding error occured, server stopped!" "\n");
+
+                emit MainWindow::instance->disable_func_buttons(true);
+            }
+
+            MainWindow::instance->add_to_output("Fell back to IPv4 only.");
+        }
+
+        MainWindow::instance->add_to_output("Listening..." "\n");
+        c_acceptor.listen(asio::socket_base::max_listen_connections);
         c_acceptor.accept(c_socket, ec);
 
         if (!ec && connection == true) {
@@ -114,7 +148,7 @@ void server::start() {
 
         if (ec && connection == true) {
             server::stop();
-            MainWindow::instance->add_to_output("[!] An error occured, server stopped!");
+            MainWindow::instance->add_to_output("[!] An error occured, server stopped!" "\n");
 
             emit MainWindow::instance->disable_func_buttons(true);
         }
