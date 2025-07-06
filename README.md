@@ -24,9 +24,9 @@ This app allows to do these on a remote PC:
 
 # Screenshots
 
-![rcl-server](https://github.com/user-attachments/assets/6188e26b-60b9-439b-b35e-a8bb745187c6)
+![Screenshot 2025-07-06 141714](https://github.com/user-attachments/assets/755ebdd8-bb5e-4654-9526-a6cb68888af4)
 
-![rcl-client](https://github.com/user-attachments/assets/80a25f50-1f9b-4683-9871-8eecbe22b101)
+![Screenshot 2025-07-06 141731](https://github.com/user-attachments/assets/82e4af37-eda5-4dff-aa7d-b65f50d104b7)
 
 
 #
